@@ -1,0 +1,9 @@
+#menu {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+#menu a+a {
+	margin: 0 10px;
+}

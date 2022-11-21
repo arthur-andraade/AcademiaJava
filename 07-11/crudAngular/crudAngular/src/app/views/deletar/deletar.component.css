@@ -1,0 +1,7 @@
+#container-deletar {
+    margin: 20px;
+}
+
+#container-deletar button + button {
+    margin: 0 20px;
+}

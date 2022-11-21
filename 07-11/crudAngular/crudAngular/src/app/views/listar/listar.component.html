@@ -1,0 +1,26 @@
+<app-menu-principal></app-menu-principal>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Profissao</th>
+                <th>Ações</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pessoa of pessoas">
+                <td>{{pessoa.id}}</td>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.idade.toString()}}</td>
+                <td>{{pessoa.profissao}}</td>
+                <td id="acoes">
+                    <a class="btn btn-danger" routerLink="deletar/{{pessoa.id}}">Deletar</a>
+                    <a class="btn btn-primary" routerLink="atualizar/{{pessoa.id}}">Atualizar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

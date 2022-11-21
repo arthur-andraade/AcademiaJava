@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+		<title>Listar animais</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Especie</th>
+					<th>Idade</th>
+					<th>Raça</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="animal : ${animais}">
+					<td><span th:text="${animal.nome}"></span></td>
+					<td><span th:text="${animal.especie}"></span></td>
+					<td><span th:text="${animal.idade}"></span></td>
+					<td><span th:text="${animal.raca}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

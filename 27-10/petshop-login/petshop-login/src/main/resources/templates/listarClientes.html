@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+		<meta charset="UTF-8">
+		<title>Listar clientes</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+		<link type="text/css" rel="stylesheet" href="css/menu.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+	<div class="container">
+		<div id="menu">
+			<a class="waves-effect waves-light btn" href="/cadastroCliente" >Cadastrar Cliente</a>
+			<a class="waves-effect waves-light btn" href="/cadastroAnimal" >Cadastrar Animal</a>
+			<a class="waves-effect waves-light btn" href="/listarClientes">Listar Clientes</a>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>Idade</th>
+					<th>Rua</th>
+					<th>Cidade</th>
+					<th>Numero</th>
+					<th>Complemento</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${clientes}">
+					<td><span th:text="${cliente.nome}"></span></td>
+					<td><span th:text="${cliente.cpf}"></span></td>
+					<td><span th:text="${cliente.idade}"></span></td>
+					<td><span th:text="${cliente.endereco.rua}"></span></td>
+					<td><span th:text="${cliente.endereco.cidade}"></span></td>
+					<td><span th:text="${cliente.endereco.numero}"></span></td>
+					<td><span th:text="${cliente.endereco.complemento}"></span></td>
+					<td><a  th:href="${(#mvc.url('CC#listarAnimais').arg(0, cliente.id)).build()}">Pets</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

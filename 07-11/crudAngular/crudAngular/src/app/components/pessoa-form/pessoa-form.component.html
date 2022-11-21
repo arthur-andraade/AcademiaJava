@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="pessoaForm" (ngSubmit)="alterarModel()">
+        <div class="row">
+            <div class="col">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" aria-describedby="nome" formControlName="nome">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade" aria-describedby="idade" formControlName="idade">
+            </div>
+            <div class="col">
+                <label for="profissao" class="form-label">Profissão</label>
+                <input type="text" class="form-control" id="profissao" aria-describedby="profissao" formControlName="profissao">
+            </div>
+        </div>
+        <div id="botaoCadastrar">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+# Ambiente de build
+FROM node:18.12.1-alpine as angular-ambiente
+WORKDIR /app
+COPY . .
+RUN npm install --s
+RUN npm run build
+
+# Disponibilizando no NGINX
+FROM nginx:alpine
+VOLUME /var/cache/nginx
+COPY --from=angular-ambiente /app/dist/cadastro-pessoa /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
